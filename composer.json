@@ -1,0 +1,22 @@
+{
+  "name": "chalvik/test-remarker",
+  "description": "Test Remarked project",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "TestApp\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexey",
+      "email": "chernogorav@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
