@@ -1,6 +1,6 @@
 <?php
 
-namespace TestApp\Models;
+namespace App\Models;
 
 final class Order
 {

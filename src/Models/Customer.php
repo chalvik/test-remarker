@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TestApp\Models;
+namespace App\Models;
 
 final class Customer
 {

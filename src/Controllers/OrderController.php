@@ -1,8 +1,10 @@
 <?php
 
-namespace TestApp\Controllers;
+declare(strict_types=1);
 
-class OrderController
+namespace App\Controllers;
+
+final class OrderController
 {
     public function calc(): void
     {
@@ -22,7 +24,7 @@ class OrderController
         }
 
         /** To Do Service  */
-        $result = $data;
+        $result = [];
         echo json_encode($result);
     }
 }
