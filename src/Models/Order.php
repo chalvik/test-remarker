@@ -2,7 +2,7 @@
 
 namespace TestApp\Models;
 
-class Order
+final class Order
 {
     /** @var Item[] */
     public array $items = [];

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TestApp\Models;
 
-class Customer
+final class Customer
 {
     public function __construct(
         public string $gender,
