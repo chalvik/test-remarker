@@ -6,6 +6,9 @@ namespace App\Controllers;
 
 use App\Exceptions\ValidationException;
 use App\Services\DiscountService;
+use App\Services\EarlyOrderDiscount;
+use App\Services\PensionerDiscount;
+use App\Services\QuantityDiscount;
 use App\Validators\PayloadValidator;
 
 final class OrderController
@@ -35,7 +38,11 @@ final class OrderController
             return;
         }
 
-        $discountService = new DiscountService([]);
+        $discountService = new DiscountService([
+            new PensionerDiscount(),
+            new EarlyOrderDiscount(),
+            new QuantityDiscount()
+        ]);
 
         $result = $discountService->applyAll($order);
         http_response_code(200);
