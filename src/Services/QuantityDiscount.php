@@ -7,7 +7,7 @@ namespace App\Services;
 use App\Services\Interfaces\DiscountInterface;
 use App\Models\Order;
 
-class QuantityDiscount implements DiscountInterface
+final class QuantityDiscount implements DiscountInterface
 {
     private float $rate = 0.03; // 3%
 

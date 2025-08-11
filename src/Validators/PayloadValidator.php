@@ -9,7 +9,7 @@ use App\Models\Customer;
 use App\Models\Item;
 use App\Models\Order;
 
-class PayloadValidator
+final class PayloadValidator
 {
     /**
      * @param array $data

@@ -6,7 +6,7 @@ namespace App\Services;
 
 use App\Models\Order;
 
-readonly class DiscountService
+final class DiscountService
 {
     public function __construct(
         public array $discounts

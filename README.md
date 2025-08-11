@@ -32,3 +32,7 @@
 ### - items - массив товаров
 * - `price` - базовая цена
 * - `quantity` - кол-во
+
+
+# tests
+## vendor/bin/phpunit tests
