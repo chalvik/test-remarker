@@ -3,25 +3,23 @@
 
 ## Установка
 
-- make up 
-- composer install 
+- make vendor
+- make up
+
 
 ## Пример запроса где 
 
 ```
-{
-    "buyer": {
-    "birth_date" : "2024-12-12",
-    "gender":"m"
-},
-"delivery_date":"2024-12-12",
-"items":[
-    {
-        "price": 5,
-        "quantity": 5
-    }
+ curl -X POST http://localhost:8888/order/calc \
+  -H "Content-Type: application/json" \
+  -d '{
+    "buyer": { "birth_date": "1958-05-10", "gender": "female" },
+    "delivery_date": "2025-08-20T12:00:00+00:00",
+    "items": [
+      { "name": "pizza", "price": 10.00, "quantity": 10 }, 
+      { "name": "cola", "price": 2.50, "quantity": 2 } 
     ]
-}
+  }'
 ```
 
 ### - buyer - покупатель 
