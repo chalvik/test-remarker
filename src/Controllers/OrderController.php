@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Exceptions\ValidationException;
+use App\Services\DiscountService;
+use App\Validators\PayloadValidator;
+
 final class OrderController
 {
     public function calc(): void
@@ -23,8 +27,18 @@ final class OrderController
             return;
         }
 
-        /** To Do Service  */
-        $result = [];
+        try {
+            $order = PayloadValidator::validate($data);
+        } catch (ValidationException $e) {
+            http_response_code(422);
+            echo json_encode(['error' => $e->getMessage()]);
+            return;
+        }
+
+        $discountService = new DiscountService([]);
+
+        $result = $discountService->applyAll($order);
+        http_response_code(200);
         echo json_encode($result);
     }
 }
